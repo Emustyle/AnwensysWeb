@@ -1,0 +1,64 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AppendChild</title>
+</head>
+<body>
+
+	<h1> Welcome !</h2>
+                <p>Something you wanna tell us ?</p>
+            	
+            	<br></br>
+
+               	<form method="post">
+               		<ul id="form1">
+               			Title
+	                   <li>
+	                		<input type="text" id="titleh3" name="title">
+	                   	<br></br>
+	                   	Your Post
+	                   	<li>
+	                   	   	<textarea id="post" cols="30" rows="10"></textarea>
+	                   <br></br>
+	                   <li>
+	                    <input type="button" value="Submit" onclick="createPost()">
+	                  	<input type="reset">
+	                <ul>
+				</form>
+
+                <script>
+                	var add = 0;
+                	
+                   	function createPost() {
+
+                   		
+                   		
+                   		var count = 1 + add;
+                   		add += 1;
+
+                   		var h2 = document.createElement("h2");
+                  		var z = document.createTextNode("Post Nr. "+count);
+                  		h2.appendChild(z);
+                  		document.getElementById("blog").appendChild(h2);
+               
+                   		var h3 = document.createElement("h3");
+                   		var x = document.getElementById("titleh3").value;
+                   		document.getElementById("blog").appendChild(h3);
+  						h3.innerHTML = x;
+  						
+  						var p = document.createElement("p");
+                   		var y = document.getElementById("post").value;
+                   		document.getElementById("blog").appendChild(p);
+  						p.innerHTML = y;
+                  		
+                  		var space = document.createElement("br");
+                  		document.getElementById("blog").appendChild(space)
+                  	}
+                </script>
+			</div>
+
+			<article id="blog" style="margin-top: 3vh;"></article>
+	
+</body>
+</html>
